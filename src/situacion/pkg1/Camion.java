@@ -6,23 +6,26 @@ public class Camion extends VehiculoCarga implements Alquiler{
 
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    public Camion(float precioalquiler, String patente, String marca) {
-        super(precioalquiler, patente, marca);
+    public Camion(float precioalquiler, String patente, String marca, Integer kilometraje/*, float dia*/) {
+        super(precioalquiler, patente, marca, kilometraje/*, dia*/);
     }
+
+   
+    
+  
 
     @Override
     public void precioAlquiler() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        float totalalquiler;
+        if(super.getKilometraje()>=50){
+            totalalquiler=super.getKilometraje()*20+200;
+        }
+        else{
+            totalalquiler=super.getPrecioalquiler()+200;
+        }
+        
+        System.out.println("El precio de alquiler del camion por dia es de: "+totalalquiler);
+        
     }
 
     
