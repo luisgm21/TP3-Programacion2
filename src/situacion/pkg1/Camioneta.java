@@ -14,8 +14,10 @@ public class Camioneta extends VehiculoCarga implements Alquiler{
     public void precioAlquiler() {
         
         float totalalquiler;
-        if(super.getKilometraje()>=50){
-            totalalquiler=super.getKilometraje()*20;
+        float auxiliar; 
+        if(super.getKilometraje()>50){
+            auxiliar=(super.getKilometraje()-50)*20;
+            totalalquiler=super.getPrecioalquiler()+auxiliar ;
         }
         else{
             totalalquiler=super.getPrecioalquiler();
