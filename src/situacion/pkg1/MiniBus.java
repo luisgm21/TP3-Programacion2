@@ -24,6 +24,12 @@ public class MiniBus extends VehiculoPasajeros implements Alquiler{
         System.out.println("El precio para alquilar por dia un minibus es :"+alquilerdia);
         
     }
+    
+    public String toString(){
+        return "mini bus" + " " + "precio alquiler: "+ super.getPrecioalquiler()+ " " + "patente: "+ super.getPatente()+ " " + "marca: "+ super.getMarca();
+            
+    }
+
 
 
     

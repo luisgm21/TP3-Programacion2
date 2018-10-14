@@ -7,31 +7,36 @@ public class Auto extends VehiculoPasajeros {
     private String aire;
     private String levantacritales;
     private String alarma;
+    private String condicion;
    
 
-    public Auto(float preciobase, String aire, String levantacritales, String alarma, String patente, String marca) {
+    public Auto(float preciobase, String aire, String levantacritales, String alarma, String patente, String marca, String condicion) {
         super(patente, marca);
         this.preciobase = preciobase;
         this.aire = aire;
         this.levantacritales = levantacritales;
-        this.alarma = alarma;        
+        this.alarma = alarma;  
+        this.condicion = condicion;
     }
     
-    public Auto(float preciobase, String aire, String levantacritales, String alarma, float precioalquiler, String patente, String marca) {
+    public Auto(float preciobase, String aire, String levantacritales, String alarma, float precioalquiler, String patente, String marca, String condicion) {
         super(precioalquiler, patente, marca);
         this.preciobase = preciobase;
         this.aire = aire;
         this.levantacritales = levantacritales;
         this.alarma = alarma;
+        this.condicion = condicion;
         
     }
     
-    public Auto(float preciobase, float precioalquiler, String patente, String marca) {
+    public Auto(float preciobase, float precioalquiler, String patente, String marca, String condicion) {
         super(precioalquiler, patente, marca);
         this.preciobase = preciobase;
+        this.condicion = condicion;
     }
-    public Auto( float precioalquiler, String patente, String marca) {
-        super(precioalquiler, patente, marca);       
+    public Auto( float precioalquiler, String patente, String marca, String condicion) {
+        super(precioalquiler, patente, marca);
+        this.condicion = condicion;
     }
 
     public float getPreciobase() {
@@ -49,7 +54,10 @@ public class Auto extends VehiculoPasajeros {
     public String getAlarma() {
         return alarma;
     }
-  
+     
+    public String getCondicion() {
+        return condicion;
+    }
 
 
 }

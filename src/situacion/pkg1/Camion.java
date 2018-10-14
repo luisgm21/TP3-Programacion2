@@ -27,6 +27,11 @@ public class Camion extends VehiculoCarga implements Alquiler{
         System.out.println("El precio de alquiler del camion por dia es de: "+totalalquiler);
         
     }
+    
+    public String toString(){
+        return "camion" + " " + "precio alquiler: "+ super.getPrecioalquiler()+ " " + "patente: "+ super.getPatente()+ " " + "marca: "+ super.getMarca();
+            
+    }
 
     
 }

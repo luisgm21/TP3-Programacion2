@@ -4,12 +4,12 @@ package situacion.pkg1;
 
 public class AutoUsado extends Auto implements Venta,Alquiler{
 
-    public AutoUsado(float preciobase, String aire, String levantacritales, String alarma, float precioalquiler, String patente, String marca) {
-        super(preciobase, aire, levantacritales, alarma, precioalquiler, patente, marca);
+    public AutoUsado(float preciobase, String aire, String levantacritales, String alarma, float precioalquiler, String patente, String marca, String condicion) {
+        super(preciobase, aire, levantacritales, alarma, precioalquiler, patente, marca, condicion);
     }
 
-    public AutoUsado( float precioalquiler, String patente, String marca) {
-        super(precioalquiler, patente, marca);
+    public AutoUsado( float precioalquiler, String patente, String marca, String condicion) {
+        super(precioalquiler, patente, marca, condicion);
     }
 
   
@@ -39,6 +39,12 @@ public class AutoUsado extends Auto implements Venta,Alquiler{
         
         System.out.println("El precio de alquiler de un auto por dia es: "+alquilerdia);
         
+    }
+    
+    
+    public String toString(){
+        return "auto"+ " " + "Precio base: " + super.getPreciobase()+ " "+ "precio alquiler: "+ super.getPrecioalquiler()+ " " + "patente: "+ super.getPatente()+ " " + "marca: "+ super.getMarca()+ " "+ "condicion: " + super.getCondicion();
+            
     }
 
 }

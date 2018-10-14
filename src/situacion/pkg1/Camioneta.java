@@ -6,8 +6,8 @@ public class Camioneta extends VehiculoCarga implements Alquiler{
 
     
 
-    public Camioneta(float precioalquiler, String patente, String marca) {
-        super(precioalquiler, patente, marca);
+    public Camioneta(float precioalquiler, String patente, String marca, Integer kilometraje) {
+        super(precioalquiler, patente, marca, kilometraje);
     }
 
     @Override
@@ -26,6 +26,12 @@ public class Camioneta extends VehiculoCarga implements Alquiler{
         System.out.println("El precio de alquiler de la camioneta por dia es de: "+totalalquiler);
         
     }
+    
+    public String toString(){
+        return "camioneta" + " " + "precio alquiler: "+ super.getPrecioalquiler()+ " " + "patente: "+ super.getPatente()+ " " + "marca: "+ super.getMarca();
+            
+    }
+
     
     
 }

@@ -6,8 +6,8 @@ public class AutoNuevo extends Auto implements Venta{
 
 
     
-    public AutoNuevo(float preciobase, String aire, String levantacritales, String alarma, String patente, String marca) {
-        super(preciobase, aire, levantacritales, alarma, patente, marca);
+    public AutoNuevo(float preciobase, String aire, String levantacritales, String alarma, String patente, String marca, String condicion) {
+        super(preciobase, aire, levantacritales, alarma, patente, marca, condicion);
     }
 
    
@@ -31,7 +31,10 @@ public class AutoNuevo extends Auto implements Venta{
         preciototal=super.getPreciobase()+poralarma+poraire+porcristales+utilidad;
         System.out.println("precio total auto 0KM : "+preciototal);        
     }
-    
+    public String toString(){
+        return "auto"+ " " + "Precio base: " + super.getPreciobase()+ " "+"patente: "+ super.getPatente()+ " " + "marca: "+ super.getMarca()+ " "+ "condicion: " + super.getCondicion();
+            
+    }
    
     
 }
