@@ -2,13 +2,20 @@
 package situacion.pkg1;
 
 
+
+
 public class AutoNuevo extends Auto implements Venta{
+    
+   
 
 
     
-    public AutoNuevo(float preciobase, String aire, String levantacritales, String alarma, String patente, String marca, String condicion) {
-        super(preciobase, aire, levantacritales, alarma, patente, marca, condicion);
+    public AutoNuevo(float preciobase,String patente, String marca, String condicion) {
+        super(preciobase,patente, marca, condicion);
     }
+    
+    
+    
 
    
 
@@ -17,15 +24,20 @@ public class AutoNuevo extends Auto implements Venta{
         double preciototal,utilidad=0;
         double poraire=0,porcristales=0,poralarma=0;
         
-        if(super.getAire()=="si"){
-            poraire=super.getPreciobase()*0.02;
+        for(Object componentes :componentes){
+            if(componentes.getClass()== LevantaCristales.class){
+                 porcristales=super.getPreciobase()*0.05;
+            }
+            if(componentes.getClass()== Aire.class){
+                poraire=super.getPreciobase()*0.02;
+            }
+            if(componentes.getClass()==Alarma.class){
+                 poralarma=super.getPreciobase()*0.01;
+            }
+            System.out.println(componentes.getClass());
+            
         }
-        if(super.getLevantacritales()=="si"){
-            porcristales=super.getPreciobase()*0.05;
-        }
-        if(super.getAlarma()=="si"){
-            poralarma=super.getPreciobase()*0.01;
-        }
+        
         utilidad=super.getPreciobase()*0.50;
         
         preciototal=super.getPreciobase()+poralarma+poraire+porcristales+utilidad;

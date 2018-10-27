@@ -4,8 +4,8 @@ package situacion.pkg1;
 
 public class AutoUsado extends Auto implements Venta,Alquiler{
 
-    public AutoUsado(float preciobase, String aire, String levantacritales, String alarma, float precioalquiler, String patente, String marca, String condicion) {
-        super(preciobase, aire, levantacritales, alarma, precioalquiler, patente, marca, condicion);
+    public AutoUsado(float preciobase, float precioalquiler, String patente, String marca, String condicion) {
+        super(preciobase, precioalquiler, patente, marca, condicion);
     }
 
     public AutoUsado( float precioalquiler, String patente, String marca, String condicion) {
@@ -17,18 +17,23 @@ public class AutoUsado extends Auto implements Venta,Alquiler{
     public void precioVenta() {
         double preciototal,utilidad=0;
         double poraire=0,porcristales=0,poralarma=0;
-        if(super.getAire()=="si"){
-            poraire=super.getPreciobase()*0.02;
-        }
-        if(super.getLevantacritales()=="si"){
-            porcristales=super.getPreciobase()*0.05;
-        }
-        if(super.getAlarma()=="si"){
-            poralarma=super.getPreciobase()*0.01;
+        
+        for(Object componentes :componentes){
+            if(componentes.getClass()== LevantaCristales.class){
+                 porcristales=super.getPreciobase()*0.05;
+            }
+            if(componentes.getClass()== Aire.class){
+                poraire=super.getPreciobase()*0.02;
+            }
+            if(componentes.getClass()==Alarma.class){
+                 poralarma=super.getPreciobase()*0.01;
+            }
+            System.out.println(componentes.getClass());
+            
         }
         utilidad=super.getPreciobase()*0.35;
         preciototal=super.getPreciobase()+poralarma+poraire+porcristales+utilidad;
-        System.out.println("precio total de la venta: "+preciototal); 
+        System.out.println("precio total auto usado: "+preciototal); 
     }
 
     @Override

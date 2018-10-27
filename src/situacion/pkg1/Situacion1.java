@@ -12,22 +12,28 @@ public class Situacion1 {
         ArrayList lista = new ArrayList();//vectores
         
         
-        AutoNuevo A = new AutoNuevo ((float) 200000,"si","si","si","AC 380 KK","Peugeot","nuevo");       
+        AutoNuevo A = new AutoNuevo ((float) 200000,"AC 380 KK","Peugeot","nuevo");       
         A.precioVenta();
         System.out.println("");
+        LevantaCristales Si = new LevantaCristales();
+        Aire S = new Aire();
+        Alarma X = new Alarma();
+        A.setComponentes(Si);
+        A.setComponentes(S);
+        A.setComponentes(X);
         lista.add(A);
         
-        AutoNuevo D =new AutoNuevo ((float)210000,"no","no","si","ABC 777 BT","Fiat","nuevo");
+        AutoNuevo D =new AutoNuevo ((float)210000,"ABC 777 BT","Fiat","nuevo");
         D.precioVenta();
         System.out.println("");
         lista.add(D);
         
-        AutoNuevo F =new AutoNuevo ((float) 30000,"no","si","si","DCF 423 YR","Volkswagen","nuevo");
+        AutoNuevo F =new AutoNuevo ((float) 30000,"DCF 423 YR","Volkswagen","nuevo");
         F.precioVenta();
         System.out.println("");
         lista.add(F);
         
-        AutoUsado B= new AutoUsado((float)150000,"si","no","si",0,"GDF 434","Fiat","usado");
+        AutoUsado B= new AutoUsado((float)150000,(float)0,"GDF 434","Fiat","usado");
         B.precioVenta();
         System.out.println("");
         lista.add(B);
@@ -70,6 +76,8 @@ public class Situacion1 {
         for (Object Object : lista) {
             System.out.println(Object);
         }
+        
+        
     }
     
 }
