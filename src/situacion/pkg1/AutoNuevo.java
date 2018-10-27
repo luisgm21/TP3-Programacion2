@@ -34,7 +34,7 @@ public class AutoNuevo extends Auto implements Venta{
             if(componentes.getClass()==Alarma.class){
                  poralarma=super.getPreciobase()*0.01;
             }
-            System.out.println(componentes.getClass());
+            
             
         }
         

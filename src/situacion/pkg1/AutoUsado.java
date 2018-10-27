@@ -28,7 +28,7 @@ public class AutoUsado extends Auto implements Venta,Alquiler{
             if(componentes.getClass()==Alarma.class){
                  poralarma=super.getPreciobase()*0.01;
             }
-            System.out.println(componentes.getClass());
+            
             
         }
         utilidad=super.getPreciobase()*0.35;

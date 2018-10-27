@@ -3,11 +3,14 @@ package situacion.pkg1;
 
 
 public class MiniBus extends VehiculoPasajeros implements Alquiler{
+    
+    private Integer plazas;
 
    
 
-    public MiniBus(float precioalquiler, String patente, String marca/*, Integer kilometraje*/) {
-        super(precioalquiler, patente, marca/*, kilometraje*/);
+    public MiniBus(float precioalquiler, String patente, String marca, Integer plazas) {
+        super(precioalquiler, patente, marca);
+        this.plazas=plazas;
     }
 
 
@@ -18,7 +21,7 @@ public class MiniBus extends VehiculoPasajeros implements Alquiler{
         
         float alquilerdia;
         
-        alquilerdia=super.getPrecioalquiler()+250;
+        alquilerdia=super.getPrecioalquiler()+(250*plazas) ;
         
         
         System.out.println("El precio para alquilar por dia un minibus es :"+alquilerdia);
