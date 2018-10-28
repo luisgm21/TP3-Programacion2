@@ -10,7 +10,7 @@ public class ParqueAutomotor {
         
     }
     
-    public void IngresarVehiculos(){
+    public ArrayList IngresarVehiculos(){
         
         ArrayList lista = new ArrayList();//vectores
         
@@ -96,10 +96,12 @@ public class ParqueAutomotor {
         for (Object Object : lista) {
             System.out.println(Object);
         }
-        
-        
+        return (lista);
+    }   
     
-   }
+     
+     
+   
 }
     
   

@@ -1,6 +1,7 @@
 
 package situacion.pkg1;
 
+
 import java.util.ArrayList;
 
 
@@ -11,5 +12,9 @@ public class Situacion1 {
         
           ParqueAutomotor J= new ParqueAutomotor();
           J.IngresarVehiculos();
+          
+         /* MostrarVehiculos principal = new MostrarVehiculos();
+          principal.setVisible(true);
+          */
     }
 }
