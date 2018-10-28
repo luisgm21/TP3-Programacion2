@@ -2,6 +2,7 @@
 package situacion.pkg1;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 public class ParqueAutomotor {
     
@@ -10,12 +11,12 @@ public class ParqueAutomotor {
         
     }
     
-    public ArrayList IngresarVehiculos(){
+    public ArrayList IngresarVehiculos()throws RuntimeException{
         
         ArrayList lista = new ArrayList();//vectores
         
         
-        AutoNuevo A = new AutoNuevo ((float) 200000,"AC 380 KK","Peugeot","nuevo");       
+        AutoNuevo A = new AutoNuevo ((float)200000,"AC 380 KK","Peugeot","nuevo");            
         System.out.println("");
         LevantaCristales Si = new LevantaCristales();
         Aire S = new Aire();
@@ -99,7 +100,13 @@ public class ParqueAutomotor {
         return (lista);
     }   
     
-     
+     public void excepciones(){
+         try{
+             IngresarVehiculos();
+         }catch(RuntimeException ex){
+             JOptionPane.showMessageDialog(null, "tipo de dato cargado no coincide con el constructor");
+         }             
+     }
      
    
 }

@@ -13,9 +13,6 @@ public class MiniBus extends VehiculoPasajeros implements Alquiler{
         this.plazas=plazas;
     }
 
-
-    
-  
     @Override
     public void precioAlquiler() {
         
